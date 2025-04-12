@@ -1,0 +1,255 @@
+\documentclass[12pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[colorlinks, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{bookmark}
+\usepackage{tabularx} % 用于自适应表格宽度
+\usepackage{float}
+\usepackage[titletoc]{appendix} % 添加appendix宏包
+\usepackage[nottoc]{tocbibind} % 添加参考文献到目录中
+% Define \upcite for compatibility
+
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\lstset{
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    tabsize=4
+}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        
+        \vspace{1cm}
+        \includegraphics[width=\textwidth]{hnnu.png} % 替换为学校徽标路径
+\vspace{1cm}
+
+        \Huge
+        \textbf{上机报告}
+
+        \vspace{0.5cm}
+        \LARGE
+        \textbf{课程名称：}
+        \textbf{《 》}
+
+        \vfill
+
+        \Large
+        \begin{tabbing}
+            \centering
+        姓名：\quad \=  \\
+        学号：\>  \\
+        专业：\>  \\
+        %班级：\> [在此填写班级] \\
+        日期：\> \today
+        \end{tabbing}
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{Roman}
+\renewcommand{\contentsname}{}
+\begin{center}
+    \heiti \zihao{3} 目录 \\[1em]
+\end{center}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\section{问题重述}
+\subsection{问题描述}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{象的位置.png}
+\caption{“象”的可能位置}
+\label{fig:xiang_position}
+\end{figure}
+
+\subsection{问题分析}
+题目要求我们完成如下目标：
+
+\section{符号说明}
+\begin{table}[H]
+    \centering
+    \caption{符号说明表}
+    \label{tab:symbols}
+    \begin{tabularx}{\textwidth}{>{\centering\hsize=0.3\hsize}X >{\hsize=0.7\hsize}X}
+        \toprule
+        \textbf{符号} & \textbf{含义} \\
+        \midrule
+        $X_n$ & 第n步时象的位置 \\
+        $P$ & 转移概率矩阵 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{第一问求解}
+\subsection{数值计算}
+\subsection{结论}
+
+\section{第二问求解}
+\subsection{平均子力价值的计算}
+
+
+\begin{align*}
+avg\,x &= \frac{1}{7}\sum_{i=1}^{7}x_i \\
+&= \frac{1}{7}(3 \times 0.1250 + 1 \times 0.1250 + 2 \times 0.1250 \\
+&+ 4 \times 0.2500 + 2 \times 0.1250 + 1 \times 0.1250 + 3 \times 0.1250)\\
+& = \frac{1}{7}(0.3750 + 0.1250 + 0.2500 + 1.0000 + 0.2500 + 0.1250 + 0.3750)\\
+& = \frac{1}{7}\times 2.5000\\
+& = 0.3571
+\end{align*}
+
+\subsection{不同初始位置对平均子力价值的影响}
+我们的算法思路大致如下：
+\begin{enumerate}
+\item \textbf{初始化}:对$\forall X_0 = i \in S$作为初始位置。
+\item \textbf{迭代}：对于$n=1$到$N$，考虑$X_n$的分布，用程序对分布进行模拟：
+
+\begin{align*}
+X_n &\sim P(X_{n-1}, \cdot) \\
+\bar{V}_n &= \frac{1}{n}\sum_{k=1}^n V(X_k)
+\end{align*}
+\item \textbf{取平均}：将模拟过程重复$M$次取平均值作为最终结果。
+\end{enumerate}
+
+\subsection{收敛过程}
+我们将模拟过程进行\textbf{可视化处理}，得到图\ref{fig:converge}所示的收敛过程。
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{value_convergence.pdf}
+\caption{不同初始位置的价值收敛过程}
+\label{fig:converge}
+\end{figure}
+
+\section{第三问求解}
+\subsection{理论背景}
+\subsection{实验设计}
+\subsection{收敛过程}
+\subsection{实验结果}
+
+\begin{table}[htbp]
+    \centering
+    \caption{轨道长度与平均子力价值}
+    \label{tab:average_value}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{轨道长度 $N$} & \textbf{平均子力价值} \\
+        \midrule
+        10    & 2.5000 \\
+        50    & 2.3600 \\
+        100   & 2.3900 \\
+        500   & 2.4940 \\
+        1000  & 2.4760 \\
+        5000  & 2.5024 \\
+        10000 & 2.5177 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_5.png}
+    \caption{另一种收敛过程}
+    \label{fig:converge3}
+    \end{figure}
+
+
+\begin{thebibliography}{99}
+    \bibitem{baidu-xiangqi}
+百度百科.  
+\newblock 象棋.  
+\newblock \url{https://baike.baidu.com/item/%E8%B1%A1%E6%A3%8B}, 访问时间: 2025年4月12日.
+
+    \bibitem{kemeny1969finite}
+    Kemeny, John G. and Snell, J. Laurie and others.  
+    \newblock Finite markov chains.  
+    \newblock Volume 26. van Nostrand Princeton, NJ, 1969.
+    
+    \bibitem{weinan2019applied}
+    Weinan, E., Li, Tiejun, and Vanden-Eijnden, Eric.  
+    \newblock Applied Stochastic Analysis.  
+    \newblock {\em Graduate Studies in Mathematics (GSM)}, Volume 199, American Mathematical Society, 2019.
+
+    \bibitem{csdn2021article}
+    CSDN User m0\_48520385.  
+    \newblock Python实现马尔可夫链随机模拟.  
+    \newblock \url{https://blog.csdn.net/m0_48520385/article/details/118680739}.  
+    \newblock 访问时间: 2025年4月12日.
+
+    \bibitem{oliphant2006guide}
+    Oliphant, Travis E. and others.  
+    \newblock Guide to numpy.  
+    \newblock Volume 1. Trelgol Publishing USA, 2006.
+    
+
+    
+    \bibitem{birkhoff1931proof}
+    Birkhoff, George D.  
+    \newblock Proof of the ergodic theorem.  
+    \newblock {\em Proceedings of the National Academy of Sciences}, 17(12):656--660, 1931.
+    
+        \bibitem{刘海洋2013latex}
+        刘海洋.
+        \newblock {\LaTeX{} 入门}.
+        \newblock 电子工业出版社, 北京, 2013.
+    \end{thebibliography}
+
+\newpage
+
+\begin{appendices}   
+\section{文件清单}
+\begin{table}[htbp]
+    \centering
+    \caption{文件清单}
+    \label{tab:files}
+    \begin{tabular}{cccc}
+        \toprule
+        序号 & 文件名 & 类型 & 用途 \\
+        \midrule
+        1 & pai.py & Python & 计算象的平稳分布 \\
+        2 & sim.py & Python & 模拟马氏链实验 \\
+        3 & plot1.py & Python & 绘制第一问中的误差情况及平均误差 \\
+        4 & plot2.py & Python & 绘制第二问中的平均子力价值收敛过程及计算结果 \\
+        5 & average.py & Python & 绘制第三问中的平均子力价值收敛过程 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{\texttt{pai.py} 文件}
+\begin{lstlisting}[language=Python,caption=pai.py]
+\end{lstlisting}
+
+\section{\texttt{plot1.py} 文件}
+\begin{lstlisting}[language=Python,caption=plot1.py]
+\end{lstlisting}
+
+\section{\texttt{plot2.py} 文件}
+\begin{lstlisting}[language=Python,caption=plot2.py]
+\end{lstlisting}
+
+\section{\texttt{average.py} 文件}
+\begin{lstlisting}[language=Python,caption=average.py]
+\end{lstlisting}
+
+\end{appendices}
+\end{document}
