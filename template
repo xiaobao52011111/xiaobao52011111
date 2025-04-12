@@ -180,34 +180,6 @@ X_n &\sim P(X_{n-1}, \cdot) \\
 \newblock 象棋.  
 \newblock \url{https://baike.baidu.com/item/%E8%B1%A1%E6%A3%8B}, 访问时间: 2025年4月12日.
 
-    \bibitem{kemeny1969finite}
-    Kemeny, John G. and Snell, J. Laurie and others.  
-    \newblock Finite markov chains.  
-    \newblock Volume 26. van Nostrand Princeton, NJ, 1969.
-    
-    \bibitem{weinan2019applied}
-    Weinan, E., Li, Tiejun, and Vanden-Eijnden, Eric.  
-    \newblock Applied Stochastic Analysis.  
-    \newblock {\em Graduate Studies in Mathematics (GSM)}, Volume 199, American Mathematical Society, 2019.
-
-    \bibitem{csdn2021article}
-    CSDN User m0\_48520385.  
-    \newblock Python实现马尔可夫链随机模拟.  
-    \newblock \url{https://blog.csdn.net/m0_48520385/article/details/118680739}.  
-    \newblock 访问时间: 2025年4月12日.
-
-    \bibitem{oliphant2006guide}
-    Oliphant, Travis E. and others.  
-    \newblock Guide to numpy.  
-    \newblock Volume 1. Trelgol Publishing USA, 2006.
-    
-
-    
-    \bibitem{birkhoff1931proof}
-    Birkhoff, George D.  
-    \newblock Proof of the ergodic theorem.  
-    \newblock {\em Proceedings of the National Academy of Sciences}, 17(12):656--660, 1931.
-    
         \bibitem{刘海洋2013latex}
         刘海洋.
         \newblock {\LaTeX{} 入门}.
@@ -226,11 +198,11 @@ X_n &\sim P(X_{n-1}, \cdot) \\
         \toprule
         序号 & 文件名 & 类型 & 用途 \\
         \midrule
-        1 & pai.py & Python & 计算象的平稳分布 \\
-        2 & sim.py & Python & 模拟马氏链实验 \\
-        3 & plot1.py & Python & 绘制第一问中的误差情况及平均误差 \\
-        4 & plot2.py & Python & 绘制第二问中的平均子力价值收敛过程及计算结果 \\
-        5 & average.py & Python & 绘制第三问中的平均子力价值收敛过程 \\
+        1 & pai.py & Python & 计算 \\
+        2 & sim.py & Python & 模拟 \\
+        3 & plot1.py & Python & 绘制 \\
+        4 & plot2.py & Python & 绘制 \\
+        5 & average.py & Python & 绘制 \\
         \bottomrule
     \end{tabular}
 \end{table}
