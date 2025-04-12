@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}问题重述}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}问题描述}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}问题分析}{1}{subsection.1.2}%
+\contentsline {section}{\numberline {2}符号说明}{2}{section.2}%
+\contentsline {section}{\numberline {3}第一问求解}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}数值计算}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}结论}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}第二问求解}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}平均子力价值的计算}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}不同初始位置对平均子力价值的影响}{2}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}收敛过程}{3}{subsection.4.3}%
+\contentsline {section}{\numberline {5}第三问求解}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}理论背景}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}实验设计}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}收敛过程}{5}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}实验结果}{5}{subsection.5.4}%
+\contentsline {section}{参考文献}{5}{section*.7}%
+\contentsline {section}{附录 \numberline {A}文件清单}{6}{appendix.1.A}%
+\contentsline {section}{附录 \numberline {B}\texttt {pai.py} 文件}{6}{appendix.1.B}%
+\contentsline {section}{附录 \numberline {C}\texttt {plot1.py} 文件}{6}{appendix.1.C}%
+\contentsline {section}{附录 \numberline {D}\texttt {plot2.py} 文件}{6}{appendix.1.D}%
+\contentsline {section}{附录 \numberline {E}\texttt {average.py} 文件}{6}{appendix.1.E}%
